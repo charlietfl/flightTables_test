@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flight Table Layout</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/uikit/2.3.1/css/uikit.css" rel="stylesheet">
+    <link rel="stylesheet" href="flights-styles.css"/>
+    <link rel="stylesheet" href="media-query-styles.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript" src="../plugins/system/flighttables/flighttables/js/flight_tables.js"></script>
+
+    <script type="text/javascript">
+
+            var $win=$(window).resize(function(){
+                $('#size').text($win.width());
+            });
+            /* printed to joomla page */
+            var flightTableVars={
+                "pathToXml":"http:\/\/localhost\/Jobs\/ado-flighttabes-joomla_3.2\/flightTablesTestData.xml",
+                "refresh_interval":"5",
+                "rows_to_display":null,
+                "no_flights_text":"No flights registered at this time"
+            };
+            FlightTables(flightTableVars);
+
+
+    </script>
+
+
+
+    <style type="text/css">
+        body {
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #555555;
+            font-family: 'Source Sans Pro';
+            font-weight: 300;
+            line-height: 22px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="uk-container uk-container-center">
+
+    <div class="tm-middle uk-grid">
+
+        <div class="tm-main uk-width-medium-3-4">
+            <div id="flight_arrive" class="flight_arrive flight_table_wrap" data-row_limit="5">
+
+                <div class="flight_table_header">
+                    <span class="flight_icon"></span>
+                    <span class="flight_table_type"> Arrivals</span>
+                </div>
+                <table class="flights_table  uk-table uk-table-striped uk-table-condensed">
+                    <thead>
+                    <tr>
+                        <th class="flight_day">Date</th>
+                        <th class="flight_time">Time</th>
+                        <th class="flight_flight">Flight</th>
+                        <th class="flight_airport">From</th>
+                        <th class="flight_remark">Remark</th>
+                        <th class="flight_airline">Airline</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Thu</td>
+                        <td>09:45</td>
+                        <td>FR964</td>
+                        <td>London</td>
+                        <td>Fooooo</td>
+                        <td>Ryanair</td>
+                    </tr>
+                    <tr>
+                        <td>Thu</td>
+                        <td>12:15</td>
+                        <td>DC970</td>
+                        <td>Visby</td>
+                        <td>uuuuuu</td>
+                        <td>Gotlandsflyg</td>
+                    </tr>
+                    <tr class="flights_even">
+                        <td>Thu</td>
+                        <td>16:55</td>
+                        <td>WW2405</td>
+                        <td>Budapest</td>
+                        <td>yyyy</td>
+                        <td>Wizzair</td>
+                    </tr>
+                    </tbody>
+
+
+                </table>
+                <div class="flight_table_footer">
+                    <span class="flights_count"><span class="displaying">Displaying</span>  <span class="how_many">5 of 8</span> Flights</span>
+                    <button class="flights_show_more">View All <span class="flight_table_type"> Arrivals</span></button>
+                </div>
+            </div>
+<div style="height: 80px"></div>
+            <div id="flight_depart" class="flight_depart flight_table_wrap"  data-row_limit="5">
+
+                <div class="flight_table_header">
+                    <span class="flight_icon"></span>
+                    <span class="flight_table_type">Departures</span>
+                </div>
+                <table class="flights_table  uk-table uk-table-striped uk-table-condensed">
+                    <thead>
+                    <tr>
+                        <th class="flight_day">Date</th>
+                        <th class="flight_time">Time</th>
+                        <th class="flight_flight">Flight</th>
+                        <th class="flight_airport">To</th>
+                        <th class="flight_remark">Remark</th>
+                        <th class="flight_airline">Airline</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Thu</td>
+                        <td>09:45</td>
+                        <td>FR964</td>
+                        <td>London</td>
+                        <td>Fooooo</td>
+                        <td>Ryanair</td>
+                    </tr>
+                    <tr>
+                        <td>Thu</td>
+                        <td>12:15</td>
+                        <td>DC970</td>
+                        <td>Visby</td>
+                        <td>uuuuuu</td>
+                        <td>Gotlandsflyg</td>
+                    </tr>
+                    <tr class="flights_even">
+                        <td>Thu</td>
+                        <td>16:55</td>
+                        <td>WW2405</td>
+                        <td>Budapest</td>
+                        <td>yyyy</td>
+                        <td>Wizzair</td>
+                    </tr>
+                    </tbody>
+
+
+                </table>
+                <div class="flight_table_footer">
+                    <span class="flights_count"><span class="displaying">Displaying</span>  <span class="how_many">5 of 8</span>  Flights</span>
+                    <button class="flights_show_more">View All <span class="flight_table_type">Departures</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="size"></div>
+</body>
+</html>

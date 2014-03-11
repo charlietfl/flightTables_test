@@ -1,0 +1,29 @@
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+    /* Styles */
+    .flight_table_footer .flight_table_type, .flights_count .displaying{
+        display: none;
+    }
+
+    .flights_table td.low, .flights_table th.low, .flights_table td.high, .flights_table th.high{
+        display: none;
+    }
+    .flights_table.uk-table-condensed td,.flights_table.uk-table-condensed th { padding: 4px}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+/*and (min-device-width : 320px)
+and (max-device-width : 480px)*/
+and (max-width : 520px){
+    /* Styles */
+    .flights_table td.low, .flights_table th.low/*, .flights_table td.high, .flights_table th.high*/{
+        display: none;
+    }
+    .flight_table_footer .flight_table_type, .flights_count .displaying{
+        display: none;
+    }
+
+    .flights_table.uk-table-condensed td,.flights_table.uk-table-condensed th { padding: 4px}
+}
