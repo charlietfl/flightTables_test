@@ -4,7 +4,8 @@
  */
 
 
-
+var duplicate_flights=true;
+console.error('duplicate_flights is enabled !!!');
 
 
 /* main function called in joomla pages*/
@@ -19,7 +20,7 @@ function FlightTables(options){
     }
 
 //var pathToXml='../flightTablesTestData.xml';
-    var pathToXml=flightTableVars.pathToXml;
+    var pathToXml=options.pathToXml;
 
 
     var headings={
@@ -43,11 +44,10 @@ function FlightTables(options){
         }
         /* events for show more button*/
         $flightContainers.on('click','.flights_show_more',function(){
-            //var $btn=$(this).hide();
+
             var $btn=$(this);
             var $container= $btn.closest('.flight_table_wrap').toggleClass(('show_all'));
-            /* $container.find('tr.over_limit').toggle();
-             $btn.siblings('.flights_count').find('.how_many').text('All');*/
+
 
 
         });
@@ -94,6 +94,10 @@ function FlightTables(options){
                     row.push($flight.find(propertyTag).text());
                 });
                 flights[flightType].push(row);
+                /* testing behavior on live site*/
+                if(duplicate_flights){
+                    flights[flightType].push(row);
+                }
             })
         });
         buildTables();
